@@ -1,0 +1,77 @@
+Kotlin notes
+
+hard coming to this from python
+no need for ; in kotlin, you can add it though
+
+val and var # used to initialize variables
+#val for immutable variables var for mutable ones
+
+var myVariable: String = "this"
+val anotherVariable: String = "that"
+to initialize a null string: var myVariable: String? = null
+
+when syntax:
+when(variable){
+    null -> println("hi") #if null do println("hi")
+    else -> greeeting #else greeting
+}
+
+val greetingtoPrint = when (greeting){
+    null -> "hi"
+    else -> greeting
+}
+
+if syntax #not the only way
+val greetingtoPrint = if (greeting != null) greetinn else "hi"
+
+functions
+fun getGreeting(): String{
+    return "hello Kotlin"
+}
+
+fun anotherfun(){} # no data type ref means it return nothing important
+
+fun getgreeting(): String = "Hello Kotlin" # single expression function def
+this is also == fun getgreetin() = "Hello Kotlin"
+
+fun sayHello(itemtoGreet:String){
+    val msg = "Hello $itemtoGreet" # the $ allows us to put variables in strings
+    println(msg)
+}
+
+Arrays
+val interstingThings = arrayOf("Kotlin","Programming","Comicbooks") # arrayOf allows us to create arrays
+
+#ways to access things in arrays => interstingThings[0] or interstingThings.get(1)
+# interestingThings.size gets the size
+
+#looping through arrays
+for (thing in interestingThing){
+println(thing)
+}
+
+#OR
+
+interestingThings.forEach{
+    println(it)
+}
+
+#OR interestingThings.forEach{interestingThing ->
+    println(interestingThing)
+    }
+
+#OR
+interestingThings.forEachIndexed{index, interestingThing ->
+println("$interestingThing is at index $index")
+}
+
+#listOf() can be accessed the same way
+
+#mapOf() is like dictionaries or JSON objects
+
+val map = mapOf(1 to "a", 2 to "b", 3 to "c")
+#iterating
+map.forEach{key, value -> println("$key -> $value")
+
+#collection types are immutable by default, so to be able to add to them you have to ad mutable to the function
+#eg mutablelistOf, mutablemapOf etc
